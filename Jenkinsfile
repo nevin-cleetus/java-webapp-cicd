@@ -24,8 +24,8 @@ pipeline {
       }
     }
     stage('Remove Unused docker image') {
-      steps{
-        sh "sudo docker rmi $registry:$BUILD_NUMBER"
+      steps{        
+        sh "sudo docker rmi $registry:$BUILD_NUMBER --force"
       }
     }
   }
